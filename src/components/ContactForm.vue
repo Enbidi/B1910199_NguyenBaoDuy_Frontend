@@ -10,7 +10,11 @@ export default {
     },
     emits: ['submit:contact', 'delete:contact'],
     props: {
-        contact: { type: Object, required: true }
+        contact: { type: Object, required: true },
+        edit: {
+            type: Boolean,
+            default: true
+        }
     },
     data() {
         const contactFormSchema = yup.object().shape({
@@ -108,9 +112,9 @@ export default {
         </div>
 
         <div class="form-group">
-            <button class="btn btn-primary">Lưu</button>
+            <button class="btn btn-primary" @click="submitContact">Lưu</button>
             <button
-                v-if="contactLocal._id"
+                v-if="contactLocal._id && edit"
                 type="button"
                 class="ml-2 btn btn-danger"
                 @click="deleteContact"
