@@ -74,7 +74,7 @@ export default {
 </script>
 
 <template>
-    <div classs="page row">
+    <div class="page row">
         <div class="col-md-10">
             <InputSearch v-model="searchText" />
         </div>
@@ -85,7 +85,7 @@ export default {
             </h4>
             <ContactList v-if="filteredContactsCount > 0" :contacts="filteredContacts" v-model:activeIndex="activeIndex" />
             <p v-else>Không có liên hệ nào</p>
-            <div class="mt-3 rơ justify-content-around align-items-center">
+            <div class="mt-3 row justify-content-around align-items-center">
                 <button class="btn btn-sm btn-primary" @click="refreshList()">
                     <i class="fas fa-redo"></i>
                 </button>
